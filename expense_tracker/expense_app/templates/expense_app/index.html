@@ -1,0 +1,22 @@
+{# Testing here #}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog_app/bootstrap.css' %}">
+<div class="jumbotron">
+    <h1>Expense Tracker</h1>
+    {% if user.is_authenticated %}
+    User: {{ user.get_username }}
+    {% else %}
+    Not logged in
+    {% endif %}
+</div>
+{% if expense_list %}
+<ul>
+    {% for eachExpense in expense_list %}
+    <li>Emergency Funds Status: {{ eachExpense.emergencyFund }}</li>
+    <li>Checking Balance: {{ eachExpense.checking }}</li>
+    <li>{{ eachExpense.timeAccountCreated }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Nothing available.</p>
+{% endif %}
