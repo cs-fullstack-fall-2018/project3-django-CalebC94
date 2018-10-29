@@ -13,6 +13,6 @@ class Expenses(models.Model):
 
 class Account(models.Model):
     name = models.CharField(max_length=100)
-    ammount = models.IntegerField()
-    date = models.DateField()
+    amount = models.IntegerField()
+
 

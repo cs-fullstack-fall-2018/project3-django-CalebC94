@@ -6,6 +6,5 @@ class Transaction(forms.ModelForm):
         model = Account
         fields = [
         'name',
-        'ammount',
-        'date'
+        'amount',
 ]
