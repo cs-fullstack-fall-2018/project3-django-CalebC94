@@ -9,6 +9,16 @@
     Not logged in
     {% endif %}
 </div>
+
+<div>
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Deposit" />
+</form>
+{% endblock %}
+</div>
+
 {% if expense_list %}
 <ul>
     {% for eachExpense in expense_list %}
